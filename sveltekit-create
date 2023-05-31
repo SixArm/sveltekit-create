@@ -1,18 +1,18 @@
 #!/bin/sh
+set -euf
 
 # Use SvelteKit to create a new web application,
 # with our preferred settings and additions.
 
-set -euf
 dir="$1"
 
-pnpm create @svelte-add/kit@latest "$dir" -- \
+npm create @svelte-add/kit@latest "$dir" -- \
 --with eslint+playwright+postcss+prettier+tailwindcss+typescript+vitest \
 --postcss-autoprefixer \
 --tailwindcss-daisyui \
---tailwindcss-form \
+--tailwindcss-forms \
 --tailwindcss-typography
 
 cd "$dir"
-git init && git add -A && git commit -m "Run pnpm create @svelte-add/kit@latest"
+git init && git add -A && git commit -m "Run npm create @svelte-add/kit@latest"
 pnpm run dev -- --open
