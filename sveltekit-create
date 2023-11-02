@@ -14,5 +14,7 @@ npm create @svelte-add/kit@latest "$dir" -- \
 --tailwindcss-typography
 
 cd "$dir"
-git init && git add -A && git commit -m "Run npm create @svelte-add/kit@latest"
+git init && 
+git add -A && 
+git commit -m "Run npm create @svelte-add/kit@latest …"
 pnpm run dev -- --open
